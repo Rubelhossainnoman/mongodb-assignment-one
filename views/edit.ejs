@@ -1,0 +1,63 @@
+<section>
+    <div class="student_crud">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-5">
+                    <div class="start_student_crud">
+                        <div class="card shadow-lg mt-5">
+                            <div class="card-header">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <a href="/students" class="btn btn-primary">Go Back</a>
+                                    <h1 class="mb-0">Edit student data</h1>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <form action="/students/update/<%= single_student._id %> " method="post" enctype="multipart/form-data">
+                                    <div class="my-3">
+                                        <label for="">Name</label>
+                                        <input type="text" value="<%= single_student.name %>" name="name" class="form-control" id="">
+                                    </div>
+                                    <div class="my-3">
+                                        <label for="">Email</label>
+                                        <input type="text" value="<%= single_student.email %>" name="email" class="form-control" id="">
+                                    </div>
+                                    <div class="my-3">
+                                        <label for="">Skill</label>
+                                        <!-- <input type="text" value="<%= //single_student.skill %>" name="skill" class="form-control" id=""> -->
+                                        <select class="form-select" class="form-control" name="skill" aria-label="Default select example">
+                                          <option <% if (single_student.skill == "Furniture offers") { %>selected<% } %> value="<%= single_student.skill %>">Furniture offers</option>
+                                          <option <% if (single_student.skill == "student") { %>selected<% } %> value="<%= single_student.skill %>">student</option>
+                                          <option <% if (single_student.skill == "Marketing officer") { %>selected<% } %> value="<%= single_student.skill %>">Marketing officer</option>
+                                          <option <% if (single_student.skill == "Graphic designer") { %>selected<% } %> value="<%= single_student.skill %>">Graphic designer</option>
+                                          <option <% if (single_student.skill == "MERN Stack web developer") { %>selected<% } %> value="<%= single_student.skill %>">MERN Stack web developer</option>
+                                        </select>
+                                    </div>
+                                    <div class="my-3">
+                                        <label for="">Age</label>
+                                        <input type="text" value="<%= single_student.age%>" name="age" class="form-control" id="">
+                                    </div>
+                                    <div class="my-3">
+                                        <label class="d-block mb-2" for="">Photo</label>
+                                        <p class="alert-danger rounded px-1" data-bs-dismiss="alert">You need to change this photo, otherwish will be show default image on your profile</p>
+                                        <label for="for_z">
+                                            <img id="camera_img" src="/img/camera.png" alt="">
+                                        </label>
+                                        <% if (single_student.photo == 'avatar.png') { %>
+                                            <img id="preview_img" style="width: 250px; height: 250px; border-radius: 50%; display: block; object-fit: cover;" class="shadow-lg" src="/img/<%= single_student.photo %> " alt="">
+                                            <% } else { %>
+                                            <img id="preview_img" style="width: 250px; height: 250px; border-radius: 50%; display: block; object-fit: cover;" class="shadow-lg" src="/img/studentsPhoto/<%= single_student.photo %> " alt="">
+                                        <% } %>
+                                        <input hidden type="file" name="photo" class="form-control" id="for_z">
+                                    </div>
+                                    <div class="my-3">
+                                        <input id="submit_button" type="submit" class="btn btn-primary w-100" value="Update Student Data">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

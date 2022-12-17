@@ -1,0 +1,51 @@
+<section>
+    <div class="student_crud">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-5">
+                    <div class="start_student_crud">
+                        <div class="card shadow-lg mt-5">
+                            <div class="card-header">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <a href="/students" class="btn btn-primary">Go Back</a>
+                                    <h1 class="mb-0">Create A Student</h1>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <form action="/students/submited" method="post" enctype="multipart/form-data">
+                                    <div class="my-3">
+                                        <label for="">Name</label>
+                                        <input type="text" name="name" class="form-control" id="">
+                                    </div>
+                                    <div class="my-3">
+                                        <label for="">Email</label>
+                                        <input type="text" name="email" class="form-control" id="">
+                                    </div>
+                                    <div class="my-3">
+                                        <label for="">Skill</label>
+                                        <input type="text" name="skill" class="form-control" id="">
+                                    </div>
+                                    <div class="my-3">
+                                        <label for="">Age</label>
+                                        <input type="text" name="age" class="form-control" id="">
+                                    </div>
+                                    <div class="my-3">
+                                        <label class="d-block mb-2" for="">Photo</label>
+                                        <label for="for_z">
+                                            <img id="camera_img" src="/img/camera.png" alt="">
+                                        </label>
+                                        <img id="preview_img" src="/img/Rubel Hossain.jpg" alt="">
+                                        <input hidden type="file" name="photo" class="form-control" id="for_z">
+                                    </div>
+                                    <div class="my-3">
+                                        <input id="submit_button" type="submit" class="btn btn-primary w-100" value="Create New Student">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

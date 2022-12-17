@@ -1,0 +1,30 @@
+<div class="single_student my-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-5">
+                <div class="get_single_student">
+                    <div class="card shadow-lg p-2">
+                        <div class="card-header d-flex justify-content-center">
+                            <h2 class="text-center mb-0">Single User (id)</h2>
+                            <input hidden type="text" value="<%= data.id %> " id="myInput">
+                            <!-- The button used to copy the text -->
+                            <button title="Click to Copy id" style="outline: none; border: none; background-color: transparent;" onclick="myFunction()"><i class="fas fa-copy    "></i></button>
+                        </div>
+                        <div class="card-body">
+                            <% if (data.photo == 'avatar.png') { %>
+                                <img style="display: block; width: 300px; height: 300px; margin: auto; object-fit: cover;" class="rounded-circle shadow" src="/img/<%= data.photo %> " alt="">
+                                <% } else { %>
+                                    <img style="display: block; width: 300px; height: 300px; margin: auto; object-fit: cover;" class="rounded-circle shadow" src="/img/studentsPhoto/<%= data.photo %> " alt="">
+                            <% } %>
+                            <h2 class="text-center mb-0 mt-3"><%= data.name %></h2>
+                            <p class="text-center mb-0"><%= data.skill %></p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a class="btn btn-primary w-50" href="/students">Go Back</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
